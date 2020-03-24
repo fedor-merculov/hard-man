@@ -15,8 +15,6 @@ main {
 }
 /* Header section */
 .header {
-    height: 100vh;
-    // overflow: hidden;
     position: relative;
 }
 .header__overlay {
@@ -149,8 +147,18 @@ main {
 }
 .countdown {
     font-size: 3rem;
-    .countdown-text {
-        color: rgba(255, 0, 0, 0.3);
+    .hours,
+    .minutes {
+        padding: 5px;
+        position: relative;
+        &::after{
+            content: ":";
+            position: absolute;
+            color: rgba(255, 0, 0, 0.3);
+        }
+    }
+    .seconds {
+        padding: 5px;
     }
 }
 .section-order__form {

@@ -1,8 +1,22 @@
 window.addEventListener('load', function(){
 
+    //Header 100vh
+    function resizeHeader(){
+      let height = window.innerHeight;
+      document.querySelector('.header').style.height = `${height}px`;
+    };
+    resizeHeader();
+    window.addEventListener('resize', resizeHeader);
+
     //Smooth scroll
     var scroll = new SmoothScroll('a[href*="#"]');
 
+    //Clean hash 
+    history.pushState('', document.title, window.location.pathname);
+    window.addEventListener('beforeunload', function(){
+      window.scrollTo(0,0);
+    })
+  
     //Slider options
     var slider = tns({
         container: '.my-slider',

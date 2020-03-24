@@ -52,3 +52,6 @@ button {
 [hidden] {
   display: none !important;
 }
+input[type=text], input[type=submit], textarea{
+	-webkit-appearance: none;
+} 

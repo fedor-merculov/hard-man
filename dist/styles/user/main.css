@@ -44,6 +44,9 @@ button {
 [hidden] {
   display: none !important; }
 
+input[type=text], input[type=submit], textarea {
+  -webkit-appearance: none; }
+
 /* Flexboxtohtml style */
 .flex {
   display: -webkit-box;
@@ -110,7 +113,6 @@ main {
 
 /* Header section */
 .header {
-  height: 100vh;
   position: relative; }
 
 .header__overlay {
@@ -232,8 +234,17 @@ main {
 
 .countdown {
   font-size: 3rem; }
-  .countdown .countdown-text {
-    color: rgba(255, 0, 0, 0.3); }
+  .countdown .hours,
+  .countdown .minutes {
+    padding: 5px;
+    position: relative; }
+    .countdown .hours::after,
+    .countdown .minutes::after {
+      content: ":";
+      position: absolute;
+      color: rgba(255, 0, 0, 0.3); }
+  .countdown .seconds {
+    padding: 5px; }
 
 .section-order__form {
   width: 50%; }
@@ -312,4 +323,5 @@ main {
   .last-price {
     font-size: 1rem; }
   .section-order__form input {
-    font-size: 1rem; } }
+    font-size: 1rem;
+    margin: 5px 0; } }
